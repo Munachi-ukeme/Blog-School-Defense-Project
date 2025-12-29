@@ -1,21 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Logging in with:", username, password);
+
+    navigate("/myblogs");
+  };
+
+
   return (
     <div>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         {/* Add arrow icons for back, user, password */}
-        <a href="/adminpage">Back</a>
-
+        <Link to="/adminpage">Back</Link>
+         
+         <div>
         <label htmlFor="username">Username:</label>
-        <input type="text" />
+        <input
+        id='username'
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+         />
+         </div>
 
-        <label htmlFor="password">Password:</label>
-        <input type="password" />
+        <div>
+          <label htmlFor="password">Password:</label>
+        <input
+        id='password'
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+         />
+        </div>
+
+        <button type="submit">Login</button>
       </form>
       <a href="">Forgotten Password?</a>
-      <a href="signup">Not an admin? Signup</a>
+      <Link to="/signup">Not an admin? Signup</Link>
     </div>
   )
 }
