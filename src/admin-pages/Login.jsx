@@ -43,7 +43,7 @@ function Login() {
 
         <button type="submit">Login</button>
       </form>
-      <a href="">Forgotten Password?</a>
+      <Link to=""> Forgotten Password? </Link>
       <Link to="/signup">Not an admin? Signup</Link>
     </div>
   )
