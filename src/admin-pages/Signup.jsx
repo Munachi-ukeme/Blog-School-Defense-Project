@@ -1,5 +1,5 @@
 import React, {useState}from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
 
@@ -7,13 +7,15 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) =>{
     e.preventDefault();
 
     console.log("signing up with:", username, email, password, confirmPassword)
-  };
 
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -60,7 +62,10 @@ function Signup() {
           />
         </div>
 
-        <button type='submit'>Signup</button>
+        <button
+        type='submit'
+        disabled ={!username || !email || !password || !confirmPassword || password !== confirmPassword || password.length < 7}
+        >Signup</button>
         
       </form>
       <Link to="/login">Already an Admin? Signin</Link>
