@@ -41,7 +41,10 @@ function Login() {
          />
         </div>
 
-        <button type="submit">Login</button>
+        <button
+        type="submit"
+        disabled = {!username ||!password}
+        >Login</button>
       </form>
       <Link to=""> Forgotten Password? </Link>
       <Link to="/signup">Not an admin? Signup</Link>
