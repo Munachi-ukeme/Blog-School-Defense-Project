@@ -19,7 +19,6 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         {/* Add arrow icons for back, user, password */}
-        <Link to="/adminpage">Back</Link>
          
          <div>
         <label htmlFor="username">Username:</label>

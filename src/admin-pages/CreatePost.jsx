@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Createpost() {
+function CreatePost() {
   // State variables to hold form input values
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -97,4 +97,4 @@ function Createpost() {
   );
 }
 
-export default Createpost;
+export default CreatePost;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-do
 import AdminHome from './admin-pages/AdminHome';
 import Login from './admin-pages/Login';
 import Signup from './admin-pages/Signup';
-import Createpost from './admin-pages/CreatePost';
+import CreatePost from './admin-pages/Createpost';
 import MyBlogs from './admin-pages/MyBlog';
 import AdminNavbar from './components/AdminNavbar';
 
@@ -19,13 +19,13 @@ function App() {
   return (
       <Routes>
         {/* Admin routes */}
-        <Route path= '/adminpage' element= {<> <AdminNavbar /> <AdminHome/></> } />
+        <Route path= '/adminpage' element= {<> <AdminHome/></> } />
         <Route path= '/login' element= { <Login/> } />
         <Route path= '/signup' element= { <Signup/> } />
-        <Route path= '/logout' element= { <> <AdminNavbar /> <AdminHome /> </> } />
-        <Route path= '/new-post' element= { <><AdminNavbar/> <Createpost/></> } />
+        <Route path= '/logout' element= { <> <AdminHome /> </> } />
+        <Route path= '/new-post' element= { <><AdminNavbar/> <CreatePost/></> } />
         <Route path= '/myblogs' element= { <> <AdminNavbar/> <MyBlogs/></> } />
-        <Route path= '/back' element= { <> <AdminNavbar/> <AdminHome/></> } />
+        
 
 
         {/* Users routes */}
@@ -35,7 +35,6 @@ function App() {
         <Route path= '/userBlogs' element= { <> <Unavbar /> <Ublogs/> </> } />
         <Route path= '/userLogin' element= { <> <Unavbar /> <Ulogin/> </> } />
         <Route path= '/userSignup' element= { <> <Unavbar /> <Usignup/> </> } />
-        <Route path= '/back' element= { <> <Unavbar /> <Uhome/> </> } />
         <Route path= '/signout' element= { <> <Unavbar /> <Uhome/> </> } />
       </Routes>
   )

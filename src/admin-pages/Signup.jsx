@@ -19,8 +19,7 @@ function Signup() {
 
   return (
     <div>
-      <Link to="/adminpage">Back</Link>
-
+<h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -68,7 +67,6 @@ function Signup() {
         >Signup</button>
         
       </form>
-      <Link to="/login">Already an Admin? Signin</Link>
     </div>
   )
 }
