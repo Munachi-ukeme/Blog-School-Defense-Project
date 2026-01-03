@@ -1,8 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 import AdminHome from './admin-pages/AdminHome';
-import Login from './admin-pages/Login';
-import Signup from './admin-pages/Signup';
 import CreatePost from './admin-pages/Createpost';
 import MyBlogs from './admin-pages/MyBlog';
 import AdminNavbar from './components/AdminNavbar';
@@ -20,14 +18,10 @@ function App() {
       <Routes>
         {/* Admin routes */}
         <Route path= '/adminpage' element= {<> <AdminHome/></> } />
-        <Route path= '/login' element= { <Login/> } />
-        <Route path= '/signup' element= { <Signup/> } />
         <Route path= '/logout' element= { <> <AdminHome /> </> } />
         <Route path= '/new-post' element= { <><AdminNavbar/> <CreatePost/></> } />
         <Route path= '/myblogs' element= { <> <AdminNavbar/> <MyBlogs/></> } />
         
-
-
         {/* Users routes */}
         
         <Route path= '/' element= { <> <Unavbar /> <Uhome/> </> } />

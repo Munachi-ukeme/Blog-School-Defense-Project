@@ -5,16 +5,16 @@ import Signup from "./Signup";
 
 function AdminHome() {
   // This makes the signin form not to show. only page pic and signup
-  const [Login, setLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
-    if (Login){
+    if (showLogin){
         return(
           <div className="container">
             <div className="left">
-              <Signin />
+              <Login />
               <p>
               Not an Admin? {" "}
-              <button onClick={() => setLogin(false)}>Signup</button>
+              <button onClick={() => setShowLogin(false)}>Signup</button>
             </p>
             </div>
 
@@ -37,7 +37,7 @@ function AdminHome() {
             <Signup />
             <p>
               Already an Admin? {""}
-              <button onClick={() => setLogin(true)}>Signin</button>
+              <button onClick={() => setShowLogin(true)}>Signin</button>
             </p>
           </div>
           </div>   
